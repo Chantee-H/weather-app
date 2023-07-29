@@ -17,3 +17,11 @@ async function getWeather() {
     feels.innerHTML = 'Feels Like:' + ' ' + weatherData.current.feelslike_c + '\u00B0C';
     humidity.innerHTML = 'Humidty:' + ' ' + weatherData.current.humidity + '%';
 }
+
+form.onsubmit = e =>{
+    e.preventDefault();
+    cityName.innerHTML = cityInput.value.charAt(0).toUpperCase() + cityInput.value.slice(1);
+    output.style.display = 'block';
+   getWeather();
+ }
+ 
